@@ -52,9 +52,10 @@ Digest:: - Modules that calculate message digests
 =head1 DESCRIPTION
 
 The C<Digest::> modules calculate digests, also called "fingerprints"
-or "hashes", of some data, called a message.  The digest is some small
-fixed size string.  The actual size of the digest depend of the
-algorithm used.  The message is simply a sequence of arbitrary bytes.
+or "hashes", of some data, called a message.  The digest is (usually)
+some small/fixed size string.  The actual size of the digest depend of
+the algorithm used.  The message is simply a sequence of arbitrary
+bytes.
 
 An important property of the digest algorithms is that the digest is
 I<likely> to change if the message change in some way.  Another
