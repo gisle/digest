@@ -1,8 +1,12 @@
 2003-01-18   Gisle Aas <gisle@ActiveState.com>
 
-   Release 1.01
+   Release 1.02
 
    Sync up with version bundled with perl-5.8.
+   Patch by Jarkko Hietaniemi <jhi@iki.fi>.
+
+   Override INSTALLDIRS for 5.8 as suggested by
+   Guido Ostkamp <Guido.Ostkamp@t-online.de>.
 
 
 
