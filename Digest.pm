@@ -55,7 +55,7 @@ The C<Digest::> modules calculate digests, also called "fingerprints"
 or "hashes", of some data, called a message.  The digest is (usually)
 some small/fixed size string.  The actual size of the digest depend of
 the algorithm used.  The message is simply a sequence of arbitrary
-bytes.
+bytes or bits.
 
 An important property of the digest algorithms is that the digest is
 I<likely> to change if the message change in some way.  Another
@@ -148,6 +148,32 @@ calculate the digest for.  The return value is the $ctx object itself.
 The $io_handle is read until EOF and the content is appended to the
 message we calculate the digest for.  The return value is the $ctx
 object itself.
+
+=item $ctx->add_bits($data, $nbits)
+
+=item $ctx->add_bits($bitstring)
+
+The bits provided are appended to the message we calculate the digest
+for.  The return value is the $ctx object itself.
+
+The two argument form of add_bits() will add the first $nbits bits
+from data.  For the last potentially partial byte only the high order
+C<< $nbits % 8 >> bits are used.  If $nbits is greater than C<<
+length($data) * 8 >>, then this method would do the same as C<<
+$ctx->add($data) >>, i.e. $nbits is silently ignored.
+
+The one argument form of add_bits() takes a $bitstring of "1" and "0"
+chars as argument.  It's a shorthand for C<< $ctx->add_bits(pack("B*",
+$bitstring), length($bitstring)) >>.
+
+This example shows two calls that should have the same effect:
+
+   $ctx->add_bits("111100001010");
+   $ctx->add_bits("\xF0\xA0", 12);
+
+Most digest algorithms are byte based.  For those it is not possible
+to add bits that are not a multiple of 8, and the add_bits() method
+will croak if you try.
 
 =item $ctx->digest
 
