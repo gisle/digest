@@ -3,7 +3,7 @@
    Release 1.10
 
    Added Digest::file module which provide convenience functions
-   to calculate digests of files.
+   that calculate digests of files.
 
 
 
