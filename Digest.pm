@@ -139,7 +139,8 @@ name of the digest algorithm you want to use.
 The two first forms are simply syntactic sugar which automatically
 load the right module on first use.  The second form allow you to use
 algorithm names which contains letters which are not legal perl
-identifiers, e.g. "SHA-1".
+identifiers, e.g. "SHA-1".  If no implementation for the given algorithm
+can be found, then an exception is raised.
 
 If new() is called as an instance method (i.e. $ctx->new) it will just
 reset the state the object to the state of a newly created object.  No
