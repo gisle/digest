@@ -1,3 +1,12 @@
+2004-11-08   Gisle Aas <gisle@ActiveState.com>
+
+   Release 1.10
+
+   Added Digest::file module which provide convenience functions
+   to calculate digests of files.
+
+
+
 2004-11-05   Gisle Aas <gisle@ActiveState.com>
 
    Release 1.09
