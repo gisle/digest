@@ -131,8 +131,8 @@ reference to the object (i.e. $ctx).
 
 =item $other_ctx = $ctx->clone
 
-The clone method creates a copy of the object and return a reference
-to it.
+The clone method creates a copy of the digest state object and returns
+a reference to the copy.
 
 =item $ctx->reset
 
