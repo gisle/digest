@@ -1,6 +1,8 @@
 Changes
 Digest.pm
+Digest/base.pm
 MANIFEST
 Makefile.PL
 README
+t/base.t
 t/digest.t
