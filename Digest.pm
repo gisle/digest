@@ -12,6 +12,9 @@ $VERSION = "1.07";
   "SHA-512"    => [["Digest::SHA", 512], ["Digest::SHA2", 512]],
   "HMAC-MD5"   => "Digest::HMAC_MD5",
   "HMAC-SHA-1" => "Digest::HMAC_SHA1",
+  "CRC-16"     => [["Digest::CRC", type => "crc16"]],
+  "CRC-32"     => [["Digest::CRC", type => "crc32"]],
+  "CRC-CCITT"  => [["Digest::CRC", type => "crcccitt"]],
 );
 
 sub new
