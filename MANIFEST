@@ -1,9 +1,11 @@
 Changes
 Digest.pm
 Digest/base.pm
+Digest/file.pm
 digest-bench
 MANIFEST
 Makefile.PL
 README
 t/base.t
 t/digest.t
+t/file.t
