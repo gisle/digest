@@ -1,3 +1,13 @@
+2003-04-01   Gisle Aas <gisle@ActiveState.com>
+
+   Release 1.06
+
+   Added MIME::Base64 dependency.
+
+   Minor doc tweak.
+
+
+
 2003-12-01   Gisle Aas <gisle@ActiveState.com>
 
    Release 1.05
