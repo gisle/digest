@@ -5,7 +5,7 @@ all Digest:: modules should provide.
 You will need perl version 5.004 or better to install this module.
 The Digest::MD5 module should be installed.
 
-Copyright 1998-2001 Gisle Aas.
+Copyright 1998-2001,2003 Gisle Aas.
 Copyright 1995-1996 Neil Winton.
 
 This library is free software; you can redistribute it and/or
