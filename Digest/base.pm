@@ -1,11 +1,14 @@
 package Digest::base;
 
 use strict;
+use vars qw($VERSION);
+$VERSION = "1.00";
 
 # subclass is supposed to implement at least these
 sub new;
 sub clone;
 sub add;
+sub digest;
 
 sub reset {
     my $self = shift;
@@ -62,3 +65,36 @@ sub b64digest {
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+Digest::base - Digest base class
+
+=head1 SYNPOSIS
+
+  package Digest::Foo;
+  use base 'Digest::base';
+
+=head1 DESCRIPTION
+
+The C<Digest::base> class provide implementations of the methods
+C<addfile> and C<add_bits> in terms of C<add>, and of the methods
+C<hexdigest> and C<b64digest> in terms of C<digest>.
+
+Digest implementations might want to inherit from this class to get
+this implementations of the alternative I<add> and I<digest> methods.
+A minimal subclass needs to implement the following methods by itself:
+
+    new
+    clone
+    add
+    digest
+
+The arguments and expected behaviour of these methods are described in
+L<Digest>.
+
+=head1 SEE ALSO
+
+L<Digest>
