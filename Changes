@@ -1,3 +1,16 @@
+2003-11-28   Gisle Aas <gisle@ActiveState.com>
+
+   Release 1.03
+
+   Added add_bits() method as requested by the
+   Digest::SHA author Mark Shelor.
+
+   Added Digest::base class that Digest implementations
+   can use to get default implementations of addfile(),
+   add_bits(), hexdigest() and b64digest().
+
+
+
 2003-01-18   Gisle Aas <gisle@ActiveState.com>
 
    Release 1.02
