@@ -9,6 +9,10 @@
    can use to get default implementations of addfile(),
    add_bits(), hexdigest() and b64digest().
 
+   Digest->new("SHA-256") and similar should work now
+   given that you have either Digest::SHA or Digest::SHA2
+   installed.
+
 
 
 2003-01-18   Gisle Aas <gisle@ActiveState.com>
