@@ -1,6 +1,7 @@
 Changes
 Digest.pm
 Digest/base.pm
+digest-bench
 MANIFEST
 Makefile.PL
 README
