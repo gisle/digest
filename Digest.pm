@@ -249,7 +249,9 @@ are so slow.
 
 =head1 SEE ALSO
 
-L<Digest::Adler32>, L<Digest::Haval256>, L<Digest::HMAC>, L<Digest::MD2>, L<Digest::MD4>, L<Digest::MD5>, L<Digest::SHA>, L<Digest::SHA1>, L<Digest::SHA2>, L<Digest::Whirlpool>
+L<Digest::Adler32>, L<Digest::CRC>, L<Digest::Haval256>,
+L<Digest::HMAC>, L<Digest::MD2>, L<Digest::MD4>, L<Digest::MD5>,
+L<Digest::SHA>, L<Digest::SHA1>, L<Digest::SHA2>, L<Digest::Whirlpool>
 
 New digest implementations should consider subclassing from L<Digest::base>.
 
