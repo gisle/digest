@@ -6,6 +6,8 @@ use Digest;
     package Digest::Dummy;
     use vars qw($VERSION @ISA);
     $VERSION = 1;
+
+    require Digest::base;
     @ISA = qw(Digest::base);
 
     sub new {
