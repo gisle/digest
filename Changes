@@ -1,3 +1,13 @@
+2004-04-29   Gisle Aas <gisle@ActiveState.com>
+
+   Release 1.08
+
+   Make Digest->new("CRC-16"), Digest->new("CRC-32") and
+   Digest->new("CRC-CCITT") work.
+   Patch by Oliver Maul <oliver@maul.tv>.
+
+
+
 2004-04-25   Gisle Aas <gisle@ActiveState.com>
 
    Release 1.07
