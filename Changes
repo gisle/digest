@@ -1,3 +1,16 @@
+2003-12-01   Gisle Aas <gisle@ActiveState.com>
+
+   Release 1.05
+
+   Drop Digest::MD5 dependency.  Avoids circular dependency
+   now that Digest::MD5 depend on this package to inherit
+   Digest::base.
+
+   Included a section about digest speed with benchmark
+   results for some implementations of this API.
+
+
+
 2003-11-29   Gisle Aas <gisle@ActiveState.com>
 
    Release 1.04
