@@ -3,7 +3,7 @@ package Digest;
 use strict;
 use vars qw($VERSION %MMAP $AUTOLOAD);
 
-$VERSION = "1.03";
+$VERSION = "1.04";
 
 %MMAP = (
   "SHA-1"      => ["Digest::SHA1", ["Digest::SHA", 1], ["Digest::SHA2", 1]],
@@ -54,15 +54,15 @@ __END__
 
 =head1 NAME
 
-Digest:: - Modules that calculate message digests
+Digest - Modules that calculate message digests
 
 =head1 SYNOPSIS
 
-  $md2 = Digest->MD2;
-  $md5 = Digest->MD5;
-
-  $sha1 = Digest->SHA1;
+  $md5  = Digest->new("MD5");
   $sha1 = Digest->new("SHA-1");
+  $sha256 = Digest->new("SHA-256");
+  $sha384 = Digest->new("SHA-384");
+  $sha512 = Digest->new("SHA-512");
 
   $hmac = Digest->HMAC_MD5($key);
 
@@ -97,7 +97,7 @@ or embedding in places that can't handle arbitrary data.
 
 =item I<hex>
 
-A twice as long string of (lowercase) hexadecimal digits.
+A twice as long string of lowercase hexadecimal digits.
 
 =item I<base64>
 
@@ -155,20 +155,20 @@ a reference to the copy.
 
 This is just an alias for $ctx->new.
 
-=item $ctx->add($data,...)
+=item $ctx->add( $data, ... )
 
 The $data provided as argument are appended to the message we
 calculate the digest for.  The return value is the $ctx object itself.
 
-=item $ctx->addfile($io_handle)
+=item $ctx->addfile( $io_handle )
 
 The $io_handle is read until EOF and the content is appended to the
 message we calculate the digest for.  The return value is the $ctx
 object itself.
 
-=item $ctx->add_bits($data, $nbits)
+=item $ctx->add_bits( $data, $nbits )
 
-=item $ctx->add_bits($bitstring)
+=item $ctx->add_bits( $bitstring )
 
 The bits provided are appended to the message we calculate the digest
 for.  The return value is the $ctx object itself.
@@ -215,7 +215,9 @@ string.
 
 =head1 SEE ALSO
 
-L<Digest::MD5>, L<Digest::SHA1>, L<Digest::HMAC>, L<Digest::MD2>
+L<Digest::Adler32>, L<Digest::Haval256>, L<Digest::HMAC>, L<Digest::MD2>, L<Digest::MD4>, L<Digest::MD5>, L<Digest::SHA>, L<Digest::SHA1>, L<Digest::SHA2>, L<Digest::Whirlpool>
+
+New digest implementations should consider subclassing from L<Digest::base>.
 
 L<MIME::Base64>
 
@@ -225,5 +227,11 @@ Gisle Aas <gisle@aas.no>
 
 The C<Digest::> interface is based on the interface originally
 developed by Neil Winton for his C<MD5> module.
+
+This library is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.
+
+    Copyright 1998-2001,2003 Gisle Aas.
+    Copyright 1995-1996 Neil Winton.
 
 =cut
