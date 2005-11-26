@@ -268,6 +268,8 @@ New digest implementations should consider subclassing from L<Digest::base>.
 
 L<MIME::Base64>
 
+http://en.wikipedia.org/wiki/Cryptographic_hash_function
+
 =head1 AUTHOR
 
 Gisle Aas <gisle@aas.no>
