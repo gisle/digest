@@ -3,7 +3,7 @@ package Digest;
 use strict;
 use vars qw($VERSION %MMAP $AUTOLOAD);
 
-$VERSION = "1.14";
+$VERSION = "1.15";
 
 %MMAP = (
   "SHA-1"      => ["Digest::SHA1", ["Digest::SHA", 1], ["Digest::SHA2", 1]],
@@ -309,7 +309,7 @@ developed by Neil Winton for his C<MD5> module.
 This library is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
 
-    Copyright 1998-2001,2003-2004 Gisle Aas.
-    Copyright 1995-1996 Neil Winton.
+    Copyright 1998-2006 Gisle Aas.
+    Copyright 1995,1996 Neil Winton.
 
 =cut
