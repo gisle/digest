@@ -16,6 +16,7 @@ $VERSION = "1.15";
   "CRC-16"     => [["Digest::CRC", type => "crc16"]],
   "CRC-32"     => [["Digest::CRC", type => "crc32"]],
   "CRC-CCITT"  => [["Digest::CRC", type => "crcccitt"]],
+  "RIPEMD-160" => "Crypt::PIPEMD160",
 );
 
 sub new
