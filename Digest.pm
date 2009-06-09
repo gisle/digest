@@ -6,7 +6,7 @@ use vars qw($VERSION %MMAP $AUTOLOAD);
 $VERSION = "1.15";
 
 %MMAP = (
-  "SHA-1"      => ["Digest::SHA1", ["Digest::SHA", 1], ["Digest::SHA2", 1]],
+  "SHA-1"      => [["Digest::SHA", 1], "Digest::SHA1", ["Digest::SHA2", 1]],
   "SHA-224"    => [["Digest::SHA", 224]],
   "SHA-256"    => [["Digest::SHA", 256], ["Digest::SHA2", 256]],
   "SHA-384"    => [["Digest::SHA", 384], ["Digest::SHA2", 384]],
