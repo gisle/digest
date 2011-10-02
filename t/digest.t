@@ -1,5 +1,6 @@
 print "1..3\n";
 
+use strict;
 use Digest;
 
 {
@@ -32,5 +33,3 @@ $Digest::MMAP{"Dummy-24"} = [["NotThere"], "NotThereEither", ["Digest::Dummy", 2
 $d = Digest->new("Dummy-24");
 print "not " unless $d->digest eq "24";
 print "ok 3\n";
-
-
