@@ -1,4 +1,6 @@
 ^blib/
+^.git/
+^.gitignore$
 \.old$
 \.bak$
 Makefile$
