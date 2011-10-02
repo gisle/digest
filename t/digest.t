@@ -1,6 +1,8 @@
-print "1..3\n";
+#!/usr/bin/env perl
 
 use strict;
+use Test::More tests => 3;
+
 use Digest;
 
 {
@@ -22,14 +24,11 @@ use Digest;
 
 my $d;
 $d = Digest->new("Dummy");
-print "not " unless $d->digest eq "ooo";
-print "ok 1\n";
+is $d->digest, "ooo";
 
 $d = Digest->Dummy;
-print "not " unless $d->digest eq "ooo";
-print "ok 2\n";
+is $d->digest, "ooo";
 
 $Digest::MMAP{"Dummy-24"} = [["NotThere"], "NotThereEither", ["Digest::Dummy", 24]];
 $d = Digest->new("Dummy-24");
-print "not " unless $d->digest eq "24";
-print "ok 3\n";
+is $d->digest, "24";
