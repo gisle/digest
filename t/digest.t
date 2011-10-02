@@ -3,24 +3,10 @@
 use strict;
 use Test::More tests => 3;
 
+# To find Digest::Dummy
+use lib 't/lib';
+
 use Digest;
-
-{
-    package Digest::Dummy;
-    use vars qw($VERSION @ISA);
-    $VERSION = 1;
-
-    require Digest::base;
-    @ISA = qw(Digest::base);
-
-    sub new {
-	my $class = shift;
-	my $d = shift || "ooo";
-	bless { d => $d }, $class;
-    }
-    sub add {}
-    sub digest { shift->{d} }
-}
 
 my $d;
 $d = Digest->new("Dummy");
