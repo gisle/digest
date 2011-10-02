@@ -3,7 +3,9 @@
 ^.gitignore$
 \.old$
 \.bak$
+\.tar.gz$
 Makefile$
+^MYMETA.yml$
 ^MANIFEST.SKIP$
 ^#
 /#
