@@ -24,24 +24,26 @@ sub new
     shift;  # class ignored
     my $algorithm = shift;
     my $impl = $MMAP{$algorithm} || do {
-	$algorithm =~ s/\W+//;
-	"Digest::$algorithm";
+        $algorithm =~ s/\W+//g;
+        "Digest::$algorithm";
     };
     $impl = [$impl] unless ref($impl);
     my $err;
     for  (@$impl) {
-	my $class = $_;
-	my @args;
-	($class, @args) = @$class if ref($class);
-	no strict 'refs';
-	unless (exists ${"$class\::"}{"VERSION"}) {
-	    eval "require $class";
-	    if ($@) {
-		$err ||= $@;
-		next;
-	    }
-	}
-	return $class->new(@args, @_);
+        my $class = $_;
+        my @args;
+        ($class, @args) = @$class if ref($class);
+        no strict 'refs';
+        unless (exists ${"$class\::"}{"VERSION"}) {
+            my $pm_file = $class . ".pm";
+            $pm_file =~ s{::}{/}g;
+            eval { require $pm_file };
+            if ($@) {
+                $err ||= $@;
+                next;
+            }
+        }
+        return $class->new(@args, @_);
     }
     die $err;
 }
