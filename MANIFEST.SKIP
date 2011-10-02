@@ -6,6 +6,4 @@ Makefile$
 ^#
 /#
 ~$
-\b(RCS|CVS)/[^/]+$
-\.cvsignore$
 pm_to_blib$
