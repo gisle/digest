@@ -9,5 +9,4 @@ WriteMakefile(
         'MIME::Base64' => 0,
         'Test::More'   => '0.47'
     },
-    'dist'         => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
 );
