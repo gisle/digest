@@ -28,6 +28,7 @@ sub new
         "Digest::$algorithm";
     };
     $impl = [$impl] unless ref($impl);
+    local $@;  # don't clobber it for our caller
     my $err;
     for  (@$impl) {
         my $class = $_;

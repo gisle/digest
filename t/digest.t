@@ -1,15 +1,17 @@
 #!/usr/bin/env perl
 
 use strict;
-use Test::More tests => 3;
+use Test::More tests => 4;
 
 # To find Digest::Dummy
 use lib 't/lib';
 
 use Digest;
 
+$@ = "rt#50663";
 my $d;
 $d = Digest->new("Dummy");
+is $@, "rt#50663";
 is $d->digest, "ooo";
 
 $d = Digest->Dummy;
