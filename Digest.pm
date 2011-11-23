@@ -212,9 +212,8 @@ In most cases you want to make sure that the $io_handle is in
 =item $ctx->add_bits( $bitstring )
 
 The add_bits() method is an alternative to add() that allow partial
-bytes to be appended to the message.  Most users should just ignore
-this method as partial bytes is very unlikely to be of any practical
-use.
+bytes to be appended to the message.  Most users can just ignore
+this method since typical applications involve only whole-byte data.
 
 The two argument form of add_bits() will add the first $nbits bits
 from $data.  For the last potentially partial byte only the high order
