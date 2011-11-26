@@ -157,6 +157,9 @@ algorithm names which contains letters which are not legal perl
 identifiers, e.g. "SHA-1".  If no implementation for the given algorithm
 can be found, then an exception is raised.
 
+To know what arguments (if any) the constructor takes (the C<$args,...> above)
+consult the docs for the specific digest implementation.
+
 If new() is called as an instance method (i.e. $ctx->new) it will just
 reset the state the object to the state of a newly created object.  No
 new object is created in this case, and the return value is the
