@@ -256,6 +256,11 @@ Same as $ctx->digest, but will return the digest in hexadecimal form.
 =item $ctx->b64digest
 
 Same as $ctx->digest, but will return the digest as a base64 encoded
+string without padding.
+
+=item $ctx->base64_padded_digest
+
+Same as $ctx->digest, but will return the digest as a base64 encoded
 string.
 
 =back

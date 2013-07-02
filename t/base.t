@@ -1,6 +1,6 @@
 #!perl -w
 
-use Test::More tests => 12;
+use Test::More tests => 13;
 
 {
    package LenDigest;
@@ -37,9 +37,11 @@ my $EBCDIC = ord('A') == 193;
 if ($EBCDIC) {
     is($ctx->hexdigest, "e7f0f0f0f0");
     is($ctx->b64digest, "5/Dw8PA");
+    is($ctx->base64_padded_digest, "5/Dw8PA=");
 } else {
     is($ctx->hexdigest, "5830303030");
     is($ctx->b64digest, "WDAwMDA");
+    is($ctx->base64_padded_digest, "WDAwMDA=");
 }
 
 $ctx->add("foo");
