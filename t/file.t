@@ -4,9 +4,8 @@ use Test::More tests => 5;
 
 {
    package Digest::Foo;
-   require Digest::base;
-   use vars qw(@ISA $VERSION);
-   @ISA = qw(Digest::base);
+   use vars qw($VERSION);
+   use parent qw(Digest::base);
 
    sub new {
 	my $class = shift;
