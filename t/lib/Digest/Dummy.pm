@@ -1,9 +1,9 @@
 package Digest::Dummy;
 
 use strict;
-use vars qw($VERSION);
 use parent qw(Digest::base);
-$VERSION = 1;
+
+our $VERSION = 1;
 
 sub new {
     my $class = shift;

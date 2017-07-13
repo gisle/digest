@@ -6,10 +6,8 @@ use Exporter qw(import);
 use Carp qw(croak);
 use Digest ();
 
-use vars qw($VERSION @EXPORT_OK);
-
-$VERSION = "1.16";
-@EXPORT_OK = qw(digest_file_ctx digest_file digest_file_hex digest_file_base64);
+our $VERSION = "1.16";
+our @EXPORT_OK = qw(digest_file_ctx digest_file digest_file_hex digest_file_base64);
 
 sub digest_file_ctx {
     my $file = shift;
