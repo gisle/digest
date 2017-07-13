@@ -1,8 +1,8 @@
 package Digest::base;
 
 use strict;
-use vars qw($VERSION);
-$VERSION = "1.16";
+
+our $VERSION = "1.16";
 
 # subclass is supposed to implement at least these
 sub new;

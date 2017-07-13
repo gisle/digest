@@ -4,9 +4,7 @@ use Test::More tests => 13;
 
 {
    package LenDigest;
-   require Digest::base;
-   use vars qw(@ISA);
-   @ISA = qw(Digest::base);
+   use parent qw(Digest::base);
 
    sub new {
 	my $class = shift;
